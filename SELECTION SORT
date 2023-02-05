@@ -1,0 +1,23 @@
+#include<stdio.h>
+int main()
+{
+    int a[]={9,5,4,6,3,2,7,11};
+    int size=sizeof(a)/sizeof(int);
+    int i,j,min=0;
+    for(i=0;i<size-1;i++)
+    {
+        min=i;
+        for(j=i+1;j<size;j++)
+        {
+            if(a[j]<a[min])
+            {
+                min=j;
+            }
+        }
+        int temp=a[i];
+        a[i]=a[min];
+        a[min]=temp;
+    }
+    for(i=0;i<size;i++)
+    printf("%d ",a[i]);
+}
